@@ -17,17 +17,22 @@ public class TicTacToeView {
         /* Print the board to the console (see examples) */
         
         /* INSERT YOUR CODE HERE */
-		for(int i = 0; i < model.getWidth(); i++)
-			System.out.print(""+i);
-			
-		System.out.println();
+		System.out.print("\n  ");
 		for(int i = 0; i < model.getWidth(); i++){
+			System.out.print(i);
+		}
+		
+		System.out.print("\n\n");
+		
+		for(int i = 0; i < model.getWidth(); i++){
+			System.out.print(i + " ");
 			for(int j=0; j < model.getWidth(); j++){
-				System.out.print(""+i);
+				
 				System.out.print(model.getMark(i,j));
 			}
-			System.out.println();
+			System.out.print("\n");
 		}
+		System.out.print("\n\n\n");
     }
 
     public void showNextMovePrompt() {
@@ -35,17 +40,13 @@ public class TicTacToeView {
         /* Display a prompt for the player's next move (see examples) */
 
         /* INSERT YOUR CODE HERE */
-		boolean player = model.isXTurn();
-		if(player){
+		if(model.isXTurn()){
 			System.out.println("Player 1 (X) Move:");
-			System.out.print("Enter the row and column numbers, separated by a space: ");
-			player = false;
 		}
 		else{
 			System.out.println("Player 2 (O) Move:");
-			System.out.print("Enter the row and column numbers, separated by a space: ");
-			player = true;
 		}
+		System.out.print("Enter the row and column numbers, separated by a space: ");
     }
 
     public void showInputError() {
@@ -53,7 +54,7 @@ public class TicTacToeView {
         /* Display an error if input is invalid (see examples) */
 
         /* INSERT YOUR CODE HERE */
-
+		System.out.println("Invalid Input!");
     }
 
     public void showResult(String r) {
